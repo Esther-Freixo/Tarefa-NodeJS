@@ -4,6 +4,6 @@ export interface UsersRepository {
     create(data: Prisma.UserCreateInput): Promise<User>
     findByEmail(email: string): Promise<User | null>
     findAllUsers(): Promise<User[] | null>
-    delete(UserId: string): Promise<User | null>
+    delete(userId: string): Promise<User | null>
 
 }
