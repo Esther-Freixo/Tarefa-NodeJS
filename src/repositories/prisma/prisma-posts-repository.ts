@@ -9,4 +9,9 @@ export class PrismaPostsRepository implements PostsRepository {
         const posts = await prisma.post.create({ data });
         return posts;
     }
+
+    async findAllPosts() {
+        const post = await prisma.post.findMany();
+        return post;
+    }
 }
