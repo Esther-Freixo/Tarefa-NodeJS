@@ -1,10 +1,10 @@
 import type { FastifyReply, FastifyRequest } from "fastify";
 import { ResourceNotFoundError } from "../../../errors/resource-not-found-error";
 import { PrismaPostsRepository } from "../../../repositories/prisma/prisma-posts-repository";
-import { GetpostUseCase } from "../../../use-cases/posts/get-posts-use-case";
+import { GetpostUseCase } from "../../../use-cases/posts/get-all-posts-use-case";
 
 
-export async function get(request: FastifyRequest, reply: FastifyReply) {
+export async function getAll(request: FastifyRequest, reply: FastifyReply) {
     try {
         const prismaPostsRepository = new PrismaPostsRepository()
         const getPostUseCase = new GetpostUseCase(prismaPostsRepository)
