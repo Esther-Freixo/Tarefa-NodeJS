@@ -1,13 +1,15 @@
 import { FastifyInstance } from "fastify";
 import { register } from "./register";
-import { get } from "./get";
+import { getAll } from "./getAll";
 import { deleteUser } from "./delete";
 import { update } from "./update";
+import { get } from "./get";
 
 export function userRoutes(app: FastifyInstance) {
     app.post('/users', register)
 
-    app.get('/users', get)
+    app.get('/users', getAll)
+    app.get('/users/:userId', get)
 
     app.delete('/users/:userId', deleteUser)
 

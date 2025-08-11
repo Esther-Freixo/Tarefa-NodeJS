@@ -1,6 +1,6 @@
 import { FastifyInstance } from "fastify";
 import { create } from "./create";
-import { get } from "./get";
+import { get } from "./getAll";
 import { deletePost } from "./delete";
 import { update } from "./update";
 
