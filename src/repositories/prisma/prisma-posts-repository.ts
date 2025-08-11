@@ -23,4 +23,24 @@ export class PrismaPostsRepository implements PostsRepository {
         })
         return post;
     }
+
+       async findById(id: string) {
+            const post = await prisma.post.findUnique({
+                where: {
+                    id
+                }
+            })
+            return post;
+        }
+        
+        async update(id: string, data: any) {
+            const post = await prisma.post.update({
+                where: { id },
+                data: {
+                    title: data.title,
+                    content: data.content,
+                }
+            })
+            return post; 
+        }
 }
