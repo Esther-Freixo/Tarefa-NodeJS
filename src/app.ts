@@ -7,6 +7,12 @@ import { postsRoutes } from './http/controllers/posts/routes';
 export const app = fastify();
 export const prisma = new PrismaClient();
 
+app.register(fastifyCors, {
+  origin: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+  allowedHeaders: ['Content-type', 'Authorization'],
+  credentials: true
+})
 
 app.register(userRoutes);
 app.register(postsRoutes);
